@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_main"
     android:padding="24dp"
     tools:context=".GameActivity">
 
@@ -12,58 +13,74 @@
         android:id="@+id/tvResultTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/result_title"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:text="Результат броска"
+        android:textColor="@color/text_secondary"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvResultSum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Сумма: 0"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:textColor="#FF6200EE"
-        app:layout_constraintBottom_toTopOf="@+id/tvDetails"
+    <!-- Карточка с результатом -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardResult"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/bg_card"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvResultTitle"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@+id/tvResultTitle">
 
-    <TextView
-        android:id="@+id/tvDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Выпало: 0"
-        android:textSize="20sp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/btnReroll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvResultSum" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <Button
+            <TextView
+                android:id="@+id/tvResultSum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сумма: 0"
+                android:textColor="@color/accent_orange"
+                android:textSize="56sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Выпало: 0"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnReroll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/btn_purple"
         android:text="@string/reroll_button"
-        app:layout_constraintBottom_toTopOf="@+id/btnBack"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/cardResult" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBack"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/back_button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/text_secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnReroll" />
