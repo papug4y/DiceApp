@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">DiceApp</string>
+    <string name="app_name">Игральные кости</string>
+    <string name="choose_dice">Тип кости:</string>
+    <string name="count_dice">Количество костей:</string>
+    <string name="roll_button">Бросить!</string>
+    <string name="reroll_button">Бросить еще раз</string>
+    <string name="authors_button">Об авторах</string>
+    <string name="authors_title">Авторы приложения</string>
+    <string name="authors_text">Разработал: Трухинов С.Е.\nГруппа: ЗИСТ-3\nКурсовая работа</string>
+    <string name="back_button">Назад</string>
+    <string name="result_title">Результат броска</string>
 </resources>
